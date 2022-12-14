@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./image/favicon-32x32.png" />
+
+    <title>NFT preview card component</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Outfit", sans-serif;
+      }
+
+      :root {
+        --softBlue: hsl(215, 51%, 70%);
+        --cyan: hsl(178, 100%, 50%);
+
+        --very__dark__blue__main__bg: hsl(217, 54%, 11%);
+        --very__dark__blue__card__bg: hsl(216, 50%, 16%);
+        --very__dark__blue__line: hsl(215, 32%, 27%);
+        --white: hsl(0, 0%, 100%);
+      }
+      .main {
+        background-color: var(--very__dark__blue__main__bg);
+
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        position: relative;
+        width: 350px;
+        height: 596px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: var(--very__dark__blue__card__bg);
+        border-radius: 15px;
+      }
+
+      .header__image__frame {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 25px;
+      }
+
+      .header__image {
+        width: 302px;
+        height: 302px;
+        border-radius: 8px;
+      }
+
+      .overlay {
+        position: absolute;
+
+        width: 302px;
+        height: 302px;
+
+        background-color: var(--cyan);
+        border-radius: 8px;
+
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+
+      .view__link {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .view__link img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .overlay:hover {
+        opacity: 0.5;
+      }
+
+      .text__box {
+        width: 90%;
+        height: 30%;
+
+        padding: 10px 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        border-bottom: 1px solid var(--very__dark__blue__line);
+      }
+
+      .title {
+        text-decoration: none;
+        color: var(--white);
+        transition: 0.2s;
+      }
+
+      .title:hover {
+        color: var(--cyan);
+      }
+
+      .paragraph {
+        color: var(--softBlue);
+        font-size: 20px;
+      }
+
+      .eth__time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .eth {
+        width: 100px;
+
+        justify-content: space-between;
+        align-items: center;
+        display: inline-block;
+
+        white-space: nowrap;
+        line-height: 20px;
+
+        color: var(--cyan);
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .time {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        color: var(--softBlue);
+      }
+
+      .user__box {
+        width: 100%;
+        flex: 1;
+
+        padding: 20px 20px;
+
+        display: flex;
+        align-items: center;
+      }
+
+      .user__image {
+        width: 40px;
+        height: 40px;
+
+        border: 2px solid var(--white);
+        border-radius: 100px;
+      }
+
+      .userName {
+        padding-left: 10px;
+        color: var(--softBlue);
+
+        font-weight: normal;
+      }
+
+      .userLink {
+        text-decoration: none;
+        color: var(--white);
+        transition: 0.2s;
+      }
+
+      .userLink:hover {
+        color: var(--cyan);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="card">
+        <div class="header__image__frame">
+          <img
+            class="header__image"
+            src="./image-equilibrium.jpg"
+            alt="Image"
+          />
+          <div class="overlay">
+            <a class="view__link" href="#">
+              <img src="./icon-view.svg" alt="Image" />
+            </a>
+          </div>
+        </div>
+        <div class="text__box">
+          <h2>
+            <a class="title" href="#">Equilibrium #3429</a>
+          </h2>
+          <p class="paragraph">
+            Our Equilibrium collection promotes balance and calm.
+          </p>
+          <div class="eth__time">
+            <span class="eth">
+              <img src="./icon-ethereum.svg" alt="Image" />
+              0.041 ETH
+            </span>
+            <span class="time">
+              <img src="./icon-clock.svg" alt="Image" />
+              3 days left
+            </span>
+          </div>
+        </div>
+        <div class="user__box">
+          <img class="user__image" src="./image-avatar.png" alt="" />
+          <h3 class="userName">
+            Creation of <a class="userLink" href="#">Jules Wyvern</a>
+          </h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
